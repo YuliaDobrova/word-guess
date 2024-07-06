@@ -1,0 +1,134 @@
+/* Root Styling */
+:root {
+  font-size: 1.5em;
+}
+
+/* General Styling */
+body {
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  /* background: radial-gradient(closest-side, #3f87a6, #ebf8e1, #3cbbf6); */
+  background: radial-gradient(ellipse at top, #3cbbf6, transparent),
+    radial-gradient(ellipse at bottom, #3f87a6, transparent);
+}
+
+/* Game Area */
+.game-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  margin-top: 60px;
+  text-shadow: 3px 3px 10px #e1edf8, -3px -3px 10px #e1edf8;
+}
+
+.word-div {
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-align: center;
+  letter-spacing: 5px;
+}
+
+.attempts {
+  display: flex;
+  padding: 15px 20px;
+  border: 1px solid #f7e7dc;
+  display: inline-block;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* Retry Button */
+#retry-button {
+  background-color: #497396;
+  border: none;
+  color: #fff8f3;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1em;
+  margin-bottom: 20px;
+  cursor: pointer;
+  border-radius: 15px;
+}
+
+#retry-button:hover {
+  background-color: #215c8c;
+}
+
+/* Custom Letter Buttons */
+.keyboard {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 10px;
+  padding-bottom: 30px;
+}
+
+.letter {
+  font-size: 1.5em;
+  width: 70px;
+  height: 70px;
+  padding: 5px 10px;
+  background-color: #405d72;
+  color: #fff8f3;
+  border: none;
+  cursor: pointer;
+  transition: all 0.125s ease;
+  border-radius: 15px;
+}
+
+.letter:hover {
+  filter: brightness(150%);
+}
+
+.letter:disabled {
+  background-color: #616362;
+}
+
+/* Media Queries */
+@media screen and (max-width: 1024px) {
+  .keyboard {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .keyboard {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .letter {
+    font-size: 1.2em;
+  }
+
+  .title {
+    font-size: 1.6em;
+  }
+}
+
+@media screen and (max-width: 481px) {
+  .keyboard {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .letter {
+    font-size: 1em;
+    width: 50px;
+    height: 50px;
+  }
+
+  .title {
+    font-size: 1.3em;
+  }
+
+  .attempts {
+    padding: 5px 10px;
+    width: 280px;
+  }
+}
